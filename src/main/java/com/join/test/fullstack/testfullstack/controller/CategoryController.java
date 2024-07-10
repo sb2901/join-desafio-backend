@@ -1,7 +1,6 @@
 package com.join.test.fullstack.testfullstack.controller;
 
 import com.join.test.fullstack.testfullstack.dto.CategoryDto;
-import com.join.test.fullstack.testfullstack.entity.Category;
 import com.join.test.fullstack.testfullstack.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

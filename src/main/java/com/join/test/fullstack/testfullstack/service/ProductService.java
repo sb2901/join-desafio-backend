@@ -28,15 +28,22 @@ public class ProductService {
         return result;
     }
 
+    public List<ProductDto> getAll( ){
+        Iterable<Product> it = productRepository.findAll();
+        List<ProductDto> result = new ArrayList<>();
+        it.forEach(e-> result.add(convertToDto(e)));
+        return result;
+    }
+
     public ProductDto get(Long id){
         Optional<Product> opProduct = productRepository.findById(id);
         return opProduct.map(this::convertToDto).orElse(null);
     }
 
     public ProductDto add(ProductDto dto) {
-        Product Product = convertToEntity(dto);
-        Product = productRepository.save(Product);
-        return convertToDto(Product);
+        Product product = convertToEntity(dto);
+        product = productRepository.save(product);
+        return convertToDto(product);
     }
 
     public void delete(Long id){

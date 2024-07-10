@@ -29,4 +29,9 @@ public class Product {
     @JoinColumn(name="nr_category", nullable=false)
     private Category category;
 
+    public void loadCategoryById(Long id){
+        category = new Category();
+        category.setId(id);
+    }
+
 }
