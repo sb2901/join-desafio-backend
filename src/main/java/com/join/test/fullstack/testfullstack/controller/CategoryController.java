@@ -1,7 +1,6 @@
 package com.join.test.fullstack.testfullstack.controller;
 
 import com.join.test.fullstack.testfullstack.dto.CategoryDto;
-import com.join.test.fullstack.testfullstack.entity.Category;
 import com.join.test.fullstack.testfullstack.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,19 +27,19 @@ public class CategoryController {
     }
 
     @PutMapping
-    public ResponseEntity<Void> update(CategoryDto c){
+    public ResponseEntity<Void> update(@RequestBody CategoryDto c){
         categoryService.update(c);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> delete(Long id){
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable( value = "id") Long id){
         categoryService.delete(id);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
     @PostMapping
-    public ResponseEntity<CategoryDto> add(CategoryDto c){
+    public ResponseEntity<CategoryDto> add(@RequestBody CategoryDto c){
         return ResponseEntity.ok(categoryService.add(c));
     }
 }

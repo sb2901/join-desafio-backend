@@ -1,16 +1,14 @@
 package com.join.test.fullstack.testfullstack.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Setter
 @Getter
-
 public class CategoryDto {
 
     private Long id;
