@@ -1,4 +1,4 @@
-# Desafio fullstack - Backend
+# Desafio Join
 
 Este projeto faz parte do Desafio proposto pela empresa Join.
 O frontend deste projeto poder ser obtido [aqui](https://github.com/sb2901/desafio-fullstack-front)
